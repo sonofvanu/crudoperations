@@ -1,0 +1,5 @@
+package com.niit.frontend.controller;
+
+public class UserController {
+
+}

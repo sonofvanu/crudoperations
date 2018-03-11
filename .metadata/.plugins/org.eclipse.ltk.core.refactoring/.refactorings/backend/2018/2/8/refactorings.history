@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.niit&apos; to &apos;com.niit.backend&apos;&#x0D;&#x0A;- Original project: &apos;backend&apos;&#x0D;&#x0A;- Original element: &apos;backend/src/main/java/com.niit&apos;&#x0D;&#x0A;- Renamed element: &apos;backend/src/main/java/com.niit.backend&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.niit&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.niit" name="com.niit.backend" qualified="false" references="true" stamp="1518946544179" textual="false" version="1.0"/>
+</session>
