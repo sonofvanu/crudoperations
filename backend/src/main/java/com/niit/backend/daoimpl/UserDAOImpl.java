@@ -1,5 +1,7 @@
 package com.niit.backend.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -28,6 +30,24 @@ public class UserDAOImpl implements UserDAO{
 			// TODO: handle exception
 			System.out.println("Error in registering user \n error obtained is"+e);
 			return false;
+		}
+	}
+
+
+	public List<UserModel> listOfUsers() {
+		// TODO Auto-generated method stub
+		
+		List<UserModel> allUsers=null;
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction transaction=session.beginTransaction();
+			allUsers=session.createQuery("From UserModel").list();
+			transaction.commit();
+			session.close();
+			return allUsers;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return allUsers;
 		}
 	}
 

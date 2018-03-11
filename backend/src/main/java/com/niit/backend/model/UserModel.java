@@ -10,9 +10,6 @@ import javax.persistence.Id;
 public class UserModel {
 	@Id
 	private String userName;
-	@Column(unique = true,columnDefinition="integer auto_increment")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
 	private String userPassword, userConfirmPassword, userCity, userAddress;
 	@Column(unique = true)
 	private String userEmail;
@@ -50,13 +47,7 @@ public class UserModel {
 		this.userCity = userCity;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
 	public String getUserAddress() {
 		return userAddress;
