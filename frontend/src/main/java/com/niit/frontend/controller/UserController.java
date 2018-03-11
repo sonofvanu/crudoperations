@@ -3,6 +3,7 @@ package com.niit.frontend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,5 +31,20 @@ public class UserController {
 			return "redirect:/reg";
 		}
 
+	}
+	
+	@RequestMapping("deleteuser/{emailid}")
+	public String deleteUser(@PathVariable("emailid") String userName)
+	{
+		UserModel user=userDAO.singleUser(userName);
+		
+		System.out.println("going delete the user "+user.getUserName());
+		if(userDAO.deleteUser(user))
+		{
+			return "redirect:/reg";
+		}
+		else{
+			return "redirect:/reg";
+		}
 	}
 }

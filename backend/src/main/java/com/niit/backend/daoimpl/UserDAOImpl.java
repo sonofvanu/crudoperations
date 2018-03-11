@@ -51,4 +51,40 @@ public class UserDAOImpl implements UserDAO{
 		}
 	}
 
+
+	public UserModel singleUser(String userName) {
+		// TODO Auto-generated method stub
+		UserModel userModel=null;
+		
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction transaction=session.beginTransaction();
+			userModel=(UserModel)session.get(UserModel.class, userName);
+			transaction.commit();
+			session.close();
+			return userModel;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("no such userfound     "+e);
+			return userModel;
+		}
+	}
+
+
+	public boolean deleteUser(UserModel userModel) {
+		// TODO Auto-generated method stub
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction transaction=session.beginTransaction();
+			session.delete(userModel);
+			transaction.commit();
+			session.close();
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

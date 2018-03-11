@@ -126,7 +126,7 @@ tr td {
 							<td>${usr.getUserName()}</td>
 							<td>${usr.getUserEmail()}</td>
 							<td>${usr.getUserCity()}</td>
-							<td><button class="btn btn-danger">DELETE</button></td>
+							<td><a href="deleteuser/${usr.getUserName()}/"><button class="btn btn-danger">DELETE</button></a></td>
 							<td><button class="btn btn-primary">EDIT</button></td>
 						</tr>
 					</c:forEach>
